@@ -1,0 +1,41 @@
+/* DEBUG & DEVELOP */
+/*
+div, section, article, nav, p, header, footer, form, table, ul, li {
+    outline: 1px dashed red;
+}
+*/
+html, body, div, section, article, aside, nav, header, footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* ** TYPOGRAPHICS ** */
+
+/* ** COLOURS ** */
+
+/* ** IMAGES ** */
+
+/* ** STRUCTURE ** */
+.wrapper {
+    width: 80%;
+}
+.middle {
+    display: flex;
+    justify-content: space-between;
+}
+span {
+    margin: auto;
+}
+span h3, h5 {
+    text-align: center;
+}
+.column {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+}
+.grid-container {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+}

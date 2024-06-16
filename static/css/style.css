@@ -16,12 +16,23 @@ html, body, div, section, article, aside, nav, header, footer {
 /* ** IMAGES ** */
 
 /* ** STRUCTURE ** */
+.middle {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    justify-items: center;
+}
 .wrapper {
     width: 80%;
 }
-.middle {
-    display: flex;
-    justify-content: space-between;
+.text-span {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.title-btn {
+    padding-left: 20px;
 }
 span {
     margin: auto;
@@ -35,7 +46,24 @@ span h3, h5 {
     padding: 20px;
 }
 .grid-container {
-    display: grid;
+    margin: 5% auto 5% auto;
+    /* display: grid; */
     column-gap: 20px;
     row-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20%;
+    justify-items: left;
+}
+.grid-item {
+    width: 33%;
+    text-align: center;
+}
+.grid-item a h6 {
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }

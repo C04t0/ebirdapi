@@ -1,0 +1,36 @@
+
+{% extends 'default.html' %}
+
+{% block content %}
+<div id="titleSpan" class="text-span">
+    <h1>Hotspot overview</h1>
+    <h5>
+        This is the hotspot overview.
+        Here you can search for a hotspot based on the hotspot id.
+    </h5>
+    <h6>Standard format of a hotspot id: "L11300818" (string)</h6>
+</div>
+<div id="asideLeft" class="column">
+
+</div>
+<div id="center" class="middle column">
+    <div id="formWindow" class="form overview">
+        <form method="post" action="{{ url_for('hotspot_detail', hotspot_id=hotspot_id) }}">
+            <div class="mb-3">
+                <label for="HotspotId-select" class="form-label">Hotspot id from known locations</label>
+                <select>
+                    <option selected>
+                        {{ foreach }}
+                    </option>
+                </select>
+                <label for="HotspotId" class="form-label">Hotspot id</label>
+                <input type="text" class="form-control" name="hotspot_id" id="HotspotId">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+<div id="asideRight" class="column">
+
+</div>
+{% endblock %}

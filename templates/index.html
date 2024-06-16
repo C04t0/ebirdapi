@@ -2,17 +2,33 @@
 {% extends 'default.html' %}
 
 {% block content %}
+
+<div id="titleSpan" class="text-span clearfix">
+    <h3>Welcome to the the E-Bird API!</h3>
+    <h5>What would you like to do?</h5>
+</div>
 <div id="asideLeft" class="column">
 
 </div>
-<div id="center" class="middle">
-    <span>
-    <h3>Welcome to the the E-Bird API!</h3>
-    <h5>What would you like to do?</h5>
-    </span>
+<div id="center" class="middle column">
     <div class="grid-container">
-        <div class="grid-item">
-
+        <div class="grid-item" title="Regions">
+            <a href="{{ url_for('regions') }}">
+                <img src="../static/img/globe.png" alt="Click here for regions">
+                <h6>Regions</h6>
+            </a>
+        </div>
+        <div class="grid-item" title="Hotspots">
+            <a href="{{ url_for('hotspots') }}">
+                <img src="../static/img/hotspot_globe.png" alt="Click here for hotspots">
+                <h6>Hotspots</h6>
+            </a>
+        </div>
+        <div class="grid-item" title="Species">
+            <a href="{{ url_for('species') }}">
+                <img src="../static/img/hummingbird.png" alt="Click here for species">
+                <h6>Species</h6>
+            </a>
         </div>
     </div>
 </div>

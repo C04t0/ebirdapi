@@ -2,5 +2,125 @@
 {% extends 'default.html' %}
 
 {% block content %}
+<div id="mainContainer">
+    <div id="titleSpan" class="text-span">
+        <h1>Species overview</h1>
+        <h5>
+            This is the species overview.
+            Here you can search for a species based on the species code, common name or scientific name.
+        </h5>
+    </div>
+    <div id="asideLeft" class="column">
 
+    </div>
+    <div id="center" class="middle">
+        <span class="text-span">
+            <h5>Species code</h5>
+            <p>Standard format of a species code: "barswa" (string)</p>
+            <p>Length of the species code must be six!</p>
+            <p>Example codes:</p>
+            <p>
+                orcwar, tamcro, torcro, spcwoo, vicwoo, eurmag, greenm, yelfly, canfly, recrob,
+                nezrob, whihaw, roahaw, crahaw, nohowl
+            </p>
+        </span>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Species code</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for species in species_list %}
+                <tr>
+                    <td> {{ species }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="{{ url_for('species_list') }}" method="post">
+        <div class="mb-3">
+            <table>
+                <tr>
+                    <td>
+                        <label for="species_code" class="form-label">Species code:</label>
+                        <input type="text" class="form-control" id="species_code" name="species_code">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </form>
+        <span class="text-span">
+            <h5>Taxonomy database</h5>
+            <p>
+                Because getting the complete taxonomy every time from the ebird-api is a waste of data.
+                I made my own species database based on the taxonomy csv.
+            </p>
+        </span>
+        <table id="speciesInfo" class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Code</th>
+            <th>Common name</th>
+            <th>Scientific name</th>
+            <th>Order</th>
+            <th>Extinct</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for species in species_db_list %}
+        <tr>
+            <td>{{ species['species_code'] }}</td>
+            <td>{{ species['common_name'] }}</td>
+            <td>{{ species['scientific_name'] }}</td>
+            <td>{{ species['scientific_order'] }}</td>
+            <td>{{ species['extinct'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="{{ url_for('species_details') }}" method="post">
+        <div class="mb-3">
+            <table>
+                <tr>
+                    <td>
+                        <label for="species_name" class="form-label">Common name:</label>
+                        <input type="text" class="form-control" id="species_name" name="species_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </form>
+        <form action="{{ url_for('species_details_sci') }}" method="post">
+        <div class="mb-3">
+            <table>
+                <tr>
+                    <td>
+                        <label for="species_sci_name" class="form-label">Scientific name:</label>
+                        <input type="text" class="form-control" id="species_sci_name" name="species_sci_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </form>
+    </div>
+    <div id="asideRight" class="column">
+
+    </div>
+</div>
 {% endblock %}

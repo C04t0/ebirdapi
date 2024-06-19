@@ -1,0 +1,15 @@
+{
+'speciesCode': 'gragoo',
+'comName': 'Graylag Goose',
+'sciName': 'Anser anser',
+'locId': 'L13536525',
+'locName': 'Gent - Bourgoyen-Ossemeersen--Ossemeersen',
+'obsDt': '2024-06-17 14:02',
+'howMany': 27,
+'lat': 51.0551747,
+'lng': 3.6764048,
+'obsValid': True,
+'obsReviewed': False,
+'locationPrivate': False,
+'subId': 'S182048632'
+}

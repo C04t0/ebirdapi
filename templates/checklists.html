@@ -1,0 +1,25 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<div id="mainContainer">
+    <span class="text-span">
+        <h1>Checklist Overview</h1>
+        <p>
+            This is the checklist overview.
+            Here you will be able to search for checklists by id, hotspot id and date.
+        </p>
+        <h3 class="error">
+            This page is currently under construction!
+        </h3>
+    </span>
+    <div id="asideLeft" class="column">
+
+    </div>
+    <div id="center" class="middle">
+        <a href="{{ url_for('index') }}">Return to main menu</a>
+    </div>
+    <div id="asideRight" class="column">
+
+    </div>
+</div>
+{% endblock %}

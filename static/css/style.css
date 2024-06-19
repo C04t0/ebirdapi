@@ -10,9 +10,13 @@ html, body, div, section, article, aside, nav, header, footer {
 }
 
 /* ** TYPOGRAPHICS ** */
-
+html, body {
+    font-family: Futura sans-serif;
+}
 /* ** COLOURS ** */
-
+.error {
+    color: red;
+}
 /* ** IMAGES ** */
 
 /* ** STRUCTURE ** */
@@ -40,10 +44,62 @@ span {
 span h3, h5 {
     text-align: center;
 }
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+/*CENTER TEST*/
+#titleSpan {
+        margin-bottom: 20px;
+    }
+
+    #center {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+/* CENTER TEST */
+
 .column {
     flex: 1;
     margin: 0 10px;
     padding: 20px;
+}
+.middle {
+    min-width: 30%;
+}
+#observationOverview {
+    max-width: 80%;
 }
 .grid-container {
     margin: 5% auto 5% auto;

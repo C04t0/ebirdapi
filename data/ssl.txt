@@ -1,0 +1,27 @@
+SSL stands for Secure Sockets Layer. It is a standard security protocol used for establishing an encrypted link between a server and a client—typically a web server (website) and a browser, or a mail server and a mail client. SSL ensures that all data transmitted between the server and client remains private and integral.
+
+Here are some key points about SSL:
+
+Encryption: SSL uses encryption to secure data transmitted over the internet. This means that sensitive information such as login credentials, credit card numbers, and personal data is encrypted and cannot be easily intercepted by malicious actors.
+
+Authentication: SSL provides authentication by using certificates issued by trusted Certificate Authorities (CAs). This ensures that the client is communicating with the intended server and not an imposter.
+
+Data Integrity: SSL ensures that the data transferred between the client and server cannot be tampered with or altered during transit without detection.
+
+Evolution to TLS
+SSL has gone through several versions and has been succeeded by Transport Layer Security (TLS), which is an updated and more secure version of SSL. Despite this, the term SSL is still commonly used to refer to both SSL and TLS protocols.
+
+Common Use Cases
+HTTPS: When you see https:// in the URL of a website, it indicates that SSL/TLS is being used to secure the connection.
+Email Servers: SSL/TLS is used to secure email communications.
+VPNs: SSL/TLS is used to secure connections in Virtual Private Networks (VPNs).
+Certificates
+SSL/TLS certificates are issued by Certificate Authorities and are used to authenticate the identity of the server and establish a secure connection. These certificates need to be installed on the server and configured properly to enable SSL/TLS.
+
+In summary, SSL (and its successor, TLS) is crucial for securing internet communications, ensuring privacy, and protecting data integrity.
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<div id="mainContainer">
+    <div id="asideLeft" class="column">
+
+    </div>
+    <div id="center" class="middle column">
+    <span id="errorSpan" class="error error-decor">
+        <p>Oops, something went wrong. Check the error code.</p>
+        <p class="error">{{ error }}</p>
+    </span>
+    </div>
+    <div id="asideRight" class="column">
+
+    </div>
+</div>
+{% endblock %}

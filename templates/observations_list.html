@@ -1,0 +1,38 @@
+{% extends 'default.html' %}
+
+{% block content %}
+
+<div id="mainContainer">
+    <div id="asideLeft" class="column">
+
+    </div>
+    <div id="center" class="middle column">
+       <div class="table-responsive">
+        <table id="observationOverview" class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    {% for key in observations[0].keys() %}
+                        <th class="text-nowrap">{{ key }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for observation in observations %}
+            <tr>
+                {% for row in observation %}
+                    {% if observation[row] %}
+                    <td> {{ observation[row] }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('observations') }}">Return to observations</a>
+    </div>
+    <div id="asideRight" class="column">
+
+    </div>
+</div>
+
+{% endblock %}

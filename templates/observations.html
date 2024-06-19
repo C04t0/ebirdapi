@@ -1,0 +1,64 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<div id="mainContainer">
+<div id="titleSpan" class="text-span">
+    <h1>Observations overview</h1>
+    <h5>
+        This is the observations overview.
+        Here you can look up specific observations and some statistics.
+    </h5>
+</div>
+<div id="asideLeft" class="column">
+
+</div>
+<div id="center" class="middle column">
+    <span class="text-span">
+        <p>Standard format of a region id: "BE-VLG" (string)</p>
+        <p>Other possibilities are: </p>
+        <p>Zeebrugge-Fonteintjes - L3232401</p>
+        <p>Kruibeke-Polders - L9013725</p>
+    </span>
+    <div class="table-responsive">
+        <table id="observationOverview" class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    {% for key in observations[0].keys() %}
+                        <th class="text-nowrap">{{ key }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for observation in observations %}
+            <tr>
+                {% for row in observation %}
+                <td> {{ observation[row] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <form action="{{ url_for('observations_list') }}" method="post">
+            <div class="mb-3">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="location_id" class="form-label">Location or region id:</label>
+                            <input type="text" class="form-control" id="location_id" name="location_id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" class="btn btn-primary" value="Search">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="asideRight" class="column">
+
+</div>
+</div>
+{% endblock %}

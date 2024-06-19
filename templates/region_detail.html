@@ -1,0 +1,29 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<div id="mainContainer">
+    <div id="asideLeft" class="column">
+
+    </div>
+    <div id="center" class="middle">
+        <table id="regionInfo" class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                {% for row in region %}
+                <th>{{ row }}</th>
+                {% endfor %}
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for row in region %}
+                <td>{{ region[row] }}</td>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

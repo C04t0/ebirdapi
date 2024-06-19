@@ -2,5 +2,103 @@
 {% extends 'default.html' %}
 
 {% block content %}
+<div id="mainContainer">
+<div id="titleSpan" class="text-span">
+    <h1>Region overview</h1>
+    <h5>
+        This is the region overview.
+        Here you can search for a region based on the region id.
+    </h5>
+</div>
+<div id="asideLeft" class="column">
 
+</div>
+<div id="center" class="middle column">
+    <span class="text-span">
+        <h5>Example overview</h5>
+    </span>
+    <table id="regionInfo" class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Bounds</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Region Type</th>
+            <th>Parent Region</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for row in region %}
+                <td>{{ region[row] }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+    <div class="text-span">
+        <h5>Region id</h5>
+        <p>Standard format of a region id: "BE-VLG" (string)</p>
+    </div>
+    <form action="{{ url_for('region_detail') }}" method="post">
+        <div class="mb-3">
+            <table>
+                <tr>
+                    <td>
+                        <label for="region_id" class="form-label">Region id</label>
+                        <input type="text" class="form-control" id="region_id" name="region_id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <div class="text-span">
+        <h5>Find adjacent regions</h5>
+        <p>
+        eBird divides the world into countries, subnational1 regions (states) or subnational2 regions (counties).
+        </p>
+        <p>Example:<p>
+        <p>Region_type = 'country', Region = 'world'</p>
+        <p>Region_type = 'subnational1', Region = 'BE'</p>
+        <p>Region_type = 'subnational1', Region = 'BE-VLG'</p>
+    </div>
+    <form action="{{ url_for('adjacent_regions') }}" method="post">
+        <div class="mb-3">
+            <table>
+                <tr>
+                    <td>
+                        <label for="region_type" class="form-label">Region type:</label>
+                        <select id="region_type" name="region_type" class="form-control">
+                            <option value="">Select a region type here</option>
+                            <option value="country">Country</option>
+                            <option value="subnational1">Subnational 1</option>
+                            <option value="subnational2">Subnational 2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="region_name" class="form-label">Region id:</label>
+                        <input type="text" class="form-control" id="region_name" name="region_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div id="asideRight" class="column">
+
+</div>
+</div>
 {% endblock %}

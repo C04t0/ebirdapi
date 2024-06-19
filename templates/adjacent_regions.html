@@ -1,0 +1,38 @@
+
+{% extends 'default.html' %}
+
+{% block content %}
+<div id="mainContainer">
+    <div id="asideLeft" class="column">
+    </div>
+
+    <div id="center" class="middle column">
+        <table id="regionInfo" class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for region in region_list %}
+            <tr>
+                {% for row in region %}
+                <td>
+                    {{ region[row] }}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{url_for('regions')}}">Return to regions</a>
+    </div>
+    <div id="asideRight" class="column">
+
+    </div>
+</div>
+
+
+
+{% endblock %}

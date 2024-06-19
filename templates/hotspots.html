@@ -8,7 +8,7 @@
         This is the hotspot overview.
         Here you can search for a hotspot based on the hotspot id.
     </h5>
-    <h6>Standard format of a hotspot id: "L11300818" (string)</h6>
+    <p>Standard format of a hotspot id: "L11300818" (string)</p>
 </div>
 <div id="asideLeft" class="column">
 
@@ -17,14 +17,25 @@
     <div id="formWindow" class="form overview">
         <form method="post" action="{{ url_for('hotspot_detail', hotspot_id=hotspot_id) }}">
             <div class="mb-3">
-                <label for="HotspotId-select" class="form-label">Hotspot id from known locations</label>
-                <select>
-                    <option selected>
-                        {{ foreach }}
-                    </option>
-                </select>
-                <label for="HotspotId" class="form-label">Hotspot id</label>
-                <input type="text" class="form-control" name="hotspot_id" id="HotspotId">
+                <table>
+                    <tr>
+                        <td>
+                        <label for="HotspotId-select" class="form-label">Hotspot id from known locations</label>
+                        <select>
+                            <option value="" selected>Select id here</option>
+                            {% for location in locations %}
+                            <option value="{{ location.id }}">{{ location.name }}</option>
+                            {% endfor %}
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <label for="HotspotId" class="form-label">Hotspot id</label>
+                        <input type="text" class="form-control" name="hotspot_id" id="HotspotId">
+                    </td>
+                    </tr>
+                </table>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
